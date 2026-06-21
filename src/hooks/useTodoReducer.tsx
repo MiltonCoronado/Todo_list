@@ -4,19 +4,19 @@ interface Todo {
   completed: boolean;
 }
 
-interface TaskState {
+interface TodoState {
   todos: Todo[];
   length: number;
   completed: number;
   pending: number;
 }
 
-type TaskAction =
+type TodoAction =
   | { type: 'ADD_TODO'; payload: string }
   | { type: 'TOOGLE_TODO'; payload: number }
   | { type: 'DELETE_TODO'; payload: number };
 
-const TaskReducer = (state: TaskState, action: TaskAction): TaskState => {
+const TodoReducer = (state: TodoState, action: TodoAction): TodoState => {
   switch (action.type) {
     case 'ADD_TODO': {
       const newTodo: Todo = {
@@ -27,6 +27,7 @@ const TaskReducer = (state: TaskState, action: TaskAction): TaskState => {
       return {
         ...state,
         todos: [...state.todos, newTodo],
+        length: state.todos.length + 1,
       };
     }
 
@@ -34,6 +35,7 @@ const TaskReducer = (state: TaskState, action: TaskAction): TaskState => {
       return {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== action.payload),
+        length: state.todos.length - 1,
       };
 
     case 'TOOGLE_TODO': {
@@ -54,5 +56,5 @@ const TaskReducer = (state: TaskState, action: TaskAction): TaskState => {
   }
 };
 
-export { TaskReducer };
-export type { TaskAction };
+export { TodoReducer };
+export type { TodoAction };

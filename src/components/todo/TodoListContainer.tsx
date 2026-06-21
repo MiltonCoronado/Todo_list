@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
 import { TodoItems } from './TodoItem';
-import { useTodos } from '../hooks/useTodos';
+import { useTodos } from '../../hooks/useTodos';
 
 const TodoListContainer = () => {
   const { todos } = useTodos();

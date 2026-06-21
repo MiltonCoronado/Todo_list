@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
-import { useTodos } from '../hooks/useTodos';
+import { useTodos } from '../../hooks/useTodos';
 
 interface TodoId {
   id: number;

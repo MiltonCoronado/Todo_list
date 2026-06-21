@@ -2,7 +2,7 @@ import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
-import { useTodos } from '../hooks/useTodos';
+import { useTodos } from '../../hooks/useTodos';
 
 const TodoSearch = () => {
   const { inputValue, setInputValue, handleKeyPress, addTodo } = useTodos();

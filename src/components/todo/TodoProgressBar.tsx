@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useTodos } from '../hooks/useTodos';
+import { useTodos } from '../../hooks/useTodos';
 
 const TodoProgressBar = () => {
   const { totalCount, completedCount } = useTodos();

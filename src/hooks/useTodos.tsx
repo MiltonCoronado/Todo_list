@@ -15,10 +15,10 @@ const listeners = new Set<() => void>();
 const notifyListeners = () => listeners.forEach((item) => item());
 
 const useTodos = () => {
-  const [, setForceRerender] = useState(0);
+  const [, forceUpdate] = useState(0);
 
   useEffect(() => {
-    const listener = () => setForceRerender((value) => value + 1);
+    const listener = () => forceUpdate((value) => value + 1);
     listeners.add(listener);
 
     return () => {
